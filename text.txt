@@ -1,3 +1,9 @@
 tensorboard --logdir ~/generative-recommenders/exps/ml-1m-l200/metaRecommender/generative-recommenders/exps/ml-1m-l200/HSTU-b8-h2-dqk25-dv25-lsilud0.2-ad0.0_DotProduct_local-l2-eps1e-06_ssl-t0.05-n128-b128-lr0.001-wu0-wd0-2025-02-08/events.out.tfevents.1739036024.beem.297121.0 --port 24001 --bind_all
 tensorboard --logdir ~/generative-recommenders/exps/ml-20m-l200/ --port 24001 --bind_all
-tensorboard --logdir ~/generative-recommenders/exps/amzn-books-l50/ --port 24001 --bind_all
+
+
+CUDA_VISIBLE_DEVICES=0 python3 main.py --gin_config_file=configs/amzn-books/hstu-sampled-softmax-n512-final.gin --master_port=12345
+
+
+
+tensorboard --logdir /home/btomasette/Documents/Code/metaRecommender/generative-recommenders/exps/amzn-books-l50/ --port 24001 --bind_all
